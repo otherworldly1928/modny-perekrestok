@@ -155,6 +155,247 @@ button:focus-visible {
   background-image: url('assets-v2/jeans-square.png');
 }
 
+/* ==============================
+   INSTAGRAM MODAL
+   ============================== */
+
+:root {
+  --mp-dark: #190602;
+  --mp-light: #F3EDE3;
+  --mp-gold: #B89A70;
+}
+
+/* Само модальное окно по умолчанию скрыто */
+.instagram-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+/* Когда JS добавит этот класс — окно откроется */
+.instagram-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Затемнение сайта */
+.instagram-modal__backdrop {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(8, 2, 1, 0.82);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Само окно */
+.instagram-modal__window {
+  position: relative;
+  z-index: 1;
+
+  width: min(92vw, 460px);
+
+  padding: 44px 38px 38px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #210906 0%,
+      var(--mp-dark) 55%,
+      #120301 100%
+    );
+
+  border: 1px solid var(--mp-gold);
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.55);
+
+  color: var(--mp-light);
+
+  text-align: center;
+
+  transform: translateY(18px) scale(0.97);
+
+  transition:
+    transform 0.3s ease;
+}
+
+.instagram-modal.is-open .instagram-modal__window {
+  transform: translateY(0) scale(1);
+}
+
+/* Крестик */
+.instagram-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+
+  width: 34px;
+  height: 34px;
+
+  border: 0;
+  background: transparent;
+
+  color: var(--mp-light);
+
+  font-size: 30px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  opacity: 0.7;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.instagram-modal__close:hover {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/* Маленькая подпись сверху */
+.instagram-modal__eyebrow {
+  margin: 0 0 12px;
+
+  color: var(--mp-gold);
+
+  font-size: 11px;
+  letter-spacing: 0.22em;
+}
+
+/* Заголовок */
+.instagram-modal__content h2 {
+  margin: 0;
+
+  color: var(--mp-light);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(38px, 6vw, 54px);
+
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* Описание */
+.instagram-modal__text {
+  margin: 18px auto 24px;
+
+  color: rgba(243, 237, 227, 0.76);
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Обёртка QR */
+.instagram-modal__qr {
+  width: min(270px, 72vw);
+
+  margin: 0 auto 20px;
+
+  padding: 12px;
+
+  background: var(--mp-light);
+
+  border: 1px solid var(--mp-gold);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+/* QR */
+.instagram-modal__qr img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+/* Ник */
+.instagram-modal__link {
+  display: inline-block;
+
+  margin-bottom: 22px;
+
+  color: var(--mp-light);
+
+  font-size: 13px;
+  letter-spacing: 0.06em;
+
+  text-decoration: none;
+}
+
+.instagram-modal__link:hover {
+  color: var(--mp-gold);
+}
+
+/* Кнопка */
+.instagram-modal__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  padding: 0 22px;
+
+  border: 1px solid var(--mp-gold);
+
+  background: transparent;
+
+  color: var(--mp-light);
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.instagram-modal__button:hover {
+  background: var(--mp-gold);
+  color: var(--mp-dark);
+
+  transform: translateY(-2px);
+}
+
+/* Пока модалка открыта — страница не скроллится */
+body.instagram-modal-open {
+  overflow: hidden;
+}
+
+/* На телефоне саму модалку не используем */
+@media (max-width: 768px) {
+  .instagram-modal {
+    display: none !important;
+  }
+}
 .knit {
   background-image: url('assets-v2/knit-square.png');
 }
