@@ -404,3 +404,53 @@ body.instagram-modal-open {
   background-image: url('assets-v2/rack-wide.png');
 }
 
+/* ==============================
+   INSTAGRAM BUTTON
+   ============================== */
+
+.instagram-site-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+  padding: 0 18px;
+
+  margin-left: 10px;
+
+  border: 1px solid var(--mp-gold);
+
+  background: transparent;
+  color: var(--mp-light);
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.instagram-site-button:hover {
+  background: var(--mp-gold);
+  color: var(--mp-dark);
+  transform: translateY(-2px);
+}
+
+/* На планшете и телефоне */
+@media (max-width: 900px) {
+  .instagram-site-button {
+    min-height: 38px;
+    padding: 0 14px;
+    margin-left: 6px;
+    font-size: 10px;
+  }
+}
