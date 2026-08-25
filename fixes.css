@@ -1,0 +1,125 @@
+:root {
+  --ink: #190602;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 4px;
+}
+
+.light a:focus-visible,
+.categories a:focus-visible,
+.prices a:focus-visible {
+  outline-color: var(--ink);
+}
+
+.logo b {
+  font-size: 30px;
+  white-space: nowrap;
+}
+
+.top-cta,
+.button {
+  transition: background-color .2s, color .2s;
+}
+
+.top-cta:hover,
+.button:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.directions {
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .header {
+    height: 64px;
+    padding: 0 20px;
+  }
+
+  nav,
+  .top-cta {
+    display: none;
+  }
+
+  .menu {
+    display: grid;
+    gap: 5px;
+    margin-left: auto;
+    padding: 12px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .menu span {
+    width: 22px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .header.is-open nav {
+    display: flex;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding: 28px;
+    background: var(--ink);
+    border-bottom: 1px solid #ffffff20;
+  }
+
+  .hero h1 {
+    font-size: clamp(39px, 12vw, 52px);
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .card {
+    height: 130px;
+    padding: 10px;
+    font-size: 9px;
+  }
+
+  .character {
+    grid-template-rows: auto 245px;
+  }
+
+  footer {
+    gap: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .top-cta,
+  .button {
+    transition: none;
+  }
+}
+
