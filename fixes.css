@@ -454,3 +454,53 @@ body.instagram-modal-open {
     font-size: 10px;
   }
 }
+/* Исправление Instagram-кнопки в шапке */
+
+.header .instagram-site-button {
+  order: 0;
+
+  flex: 0 0 auto;
+
+  min-height: 36px;
+  padding: 0 12px;
+  margin-left: 0;
+
+  white-space: nowrap;
+
+  border: 1px solid var(--mp-gold);
+  color: var(--mp-gold);
+
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.header .top-cta {
+  flex: 0 0 auto;
+}
+
+.header nav {
+  gap: 24px;
+}
+
+@media (min-width: 901px) and (max-width: 1250px) {
+  .header {
+    gap: 16px;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  .header nav {
+    gap: 16px;
+  }
+
+  .header .instagram-site-button {
+    padding: 0 9px;
+    font-size: 8px;
+  }
+
+  .header .top-cta {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 9px;
+  }
+}
