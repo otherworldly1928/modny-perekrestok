@@ -17,3 +17,58 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+
+/* ==============================
+   INSTAGRAM MODAL
+   ============================== */
+
+(() => {
+  const instagramUrl =
+    "https://www.instagram.com/modnyj_perekrestok.ukg/";
+
+  const modal = document.getElementById("instagramModal");
+
+  if (!modal) return;
+
+  const isMobile = () =>
+    window.matchMedia("(max-width: 768px)").matches;
+
+  function openInstagram() {
+    /* На телефоне сразу открываем Instagram */
+    if (isMobile()) {
+      window.location.href = instagramUrl;
+      return;
+    }
+
+    /* На компьютере показываем QR-окно */
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("instagram-modal-open");
+  }
+
+  function closeInstagram() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("instagram-modal-open");
+  }
+
+  /* Все элементы с data-instagram-open открывают Instagram */
+  document.querySelectorAll("[data-instagram-open]").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      openInstagram();
+    });
+  });
+
+  /* Крестик и затемнённый фон закрывают окно */
+  document.querySelectorAll("[data-instagram-close]").forEach((button) => {
+    button.addEventListener("click", closeInstagram);
+  });
+
+  /* Закрытие клавишей Escape */
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) {
+      closeInstagram();
+    }
+  });
+})();
