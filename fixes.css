@@ -123,3 +123,43 @@ button:focus-visible {
   }
 }
 
+/* Cohesive editorial photography based on the approved reference */
+.hero-photo {
+  background-image:
+    linear-gradient(90deg, #190602 5%, rgba(25, 6, 2, .78) 38%, rgba(25, 6, 2, .08) 72%),
+    url('assets-v2/hero-wide.png');
+  background-position: center;
+}
+
+.europe-photo {
+  background-image: url('assets-v2/europe-portrait.png');
+}
+
+.asia-photo {
+  background-image: url('assets-v2/asia-portrait.png');
+}
+
+.blazer {
+  background-image: url('assets-v2/blazer-square.png');
+}
+
+.trousers {
+  background-image: url('assets-v2/trousers-square.png');
+}
+
+.skirt {
+  background-image: url('assets-v2/skirt-square.png');
+}
+
+.jeans {
+  background-image: url('assets-v2/jeans-square.png');
+}
+
+.knit {
+  background-image: url('assets-v2/knit-square.png');
+}
+
+.rack-photo {
+  background-image: url('assets-v2/rack-wide.png');
+}
+
